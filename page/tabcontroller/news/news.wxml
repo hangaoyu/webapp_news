@@ -1,0 +1,46 @@
+<view class="main">
+
+  <scroll-view class="scroll-tab" scroll-x="true" style="width: 100%">
+      <block wx:for="{{navitems}}">
+        <view  class="scroll-tab-item bc_white"  data-hi="{{item.urlparam}}" bindtap="getnews">
+        <text class="scroll-text" >{{item.title}}</text>
+        </view>
+        </block>
+           
+    </scroll-view>
+ 
+    <!--<view class="container">  -->
+ <scroll-view class="listview" style="height:100%" scroll-y="true" bindscrolltolower="lower">
+    <block wx:for="{{items}}">
+    <view wx:if="{{item.ads&&index==0}}">
+            <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block  wx:for="{{item.ads}}" wx:for-item="ad">
+                    <swiper-item>
+                      <image src="{{ad.imgsrc}}" class="banner-image" mode="aspectFill" width="100%" height="100%"/>
+                    </swiper-item> 
+                </block>
+            </swiper>
+     </view>
+
+     <view wx:else id="{{index}}" class="cellview" bindtap="" >
+   
+     <image class="cellimage"  src="{{item.imgsrc}}"/>
+    
+     <view class="celllabel">
+      <text class="celltext" >{{item.title}}</text>
+      <text class="cellsource">{{item.source}}</text>
+      <text class="cellreply">{{item.replyCount}}跟帖</text>
+    </view>
+    </view>
+    </block>
+    
+     <button class="getmore"  wx:if="{{hidden}}" type="default" size="default" loading="{{loading}}" plain="{{plain}}"
+disabled="{{disabled}}" bindtap="getmore"> 加载更多
+ 
+    </button>
+   </scroll-view>
+ <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+  </view>

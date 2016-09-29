@@ -1,0 +1,41 @@
+{
+  "pages": [
+ 
+      "page/tabcontroller/news/news",
+      "page/tabcontroller/user/user",
+      "page/tabcontroller/detail/detail"
+       
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序演示",
+    "navigationBarBackgroundColor": "#fbf9fe",
+    "backgroundColor": "#fbf9fe"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [ {
+      "pagePath": "page/tabcontroller/news/news",
+      "iconPath": "image/wechat.png",
+      "selectedIconPath": "image/wechatHL.png",
+      "text": "新闻"
+    }, {
+      "pagePath":  "page/tabcontroller/user/user",
+      "iconPath": "image/wechat.png",
+      "selectedIconPath": "image/wechatHL.png",
+      "text": "用户"
+    }
+   
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
