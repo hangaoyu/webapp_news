@@ -1,6 +1,6 @@
-<view class="main">
 
-  <scroll-view class="scroll-tab" scroll-x="true" style="width: 100%">
+
+  <scroll-view class="scroll-tab" scroll-x="true" animation="{{opictyAnimation}}"  style="width: 100%">
       <block wx:for="{{navitems}}">
         <view  class="scroll-tab-item bc_white"  data-hi="{{item.urlparam}}" bindtap="getnews">
         <text class="scroll-text" >{{item.title}}</text>
@@ -8,16 +8,30 @@
         </block>
            
     </scroll-view>
- 
-    <!--<view class="container">  -->
+
+  <view class="category">
+                 <image class="category-icon" animation="{{iconAnimation}}"  src="/image/plus.png" bindtap="getcategory"/>
+  </view>
+  <view class="category-list" animation="{{categroyAnimation}}">
+               <block wx:for="{{navitems}}">
+               <view class="category-item" data-hi="{{item.urlparam}}" bindtap="getnews">
+            
+               {{item.title}}
+             
+               </view>   
+                </block>       
+   </view>
+
+  <view class="main">
+        <view>
  <scroll-view class="listview" style="height:100%" scroll-y="true" bindscrolltolower="lower">
     <block wx:for="{{items}}">
     <view wx:if="{{item.ads&&index==0}}">
-            <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+            <swiper  indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
                     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
                 <block  wx:for="{{item.ads}}" wx:for-item="ad">
                     <swiper-item>
-                      <image src="{{ad.imgsrc}}" class="banner-image" mode="aspectFill" width="100%" height="100%"/>
+                      <image src="{{ad.imgsrc}}" class="banner-image" mode="aspectFill" />
                     </swiper-item> 
                 </block>
             </swiper>
@@ -44,3 +58,4 @@ disabled="{{disabled}}" bindtap="getmore"> 加载更多
     加载中...
   </loading>
   </view>
+   </view>

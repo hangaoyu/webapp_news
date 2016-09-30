@@ -32,8 +32,9 @@ Page({
             }
         ],
 
-        ad:false,
-// 加载按钮
+    //    分类
+        showflag:true,
+        // 加载按钮
         disabled: false,
         plain: true,
         loading: false,
@@ -56,7 +57,16 @@ Page({
 
     onReady: function () {
         // 页面渲染完成
-
+    this.iconAnimation = wx.createAnimation({
+        duration:400,
+    })
+    this.opictyAnimation = wx.createAnimation({
+        duration:400,
+    })
+     this.categroyAnimation = wx.createAnimation({
+        duration:900,
+       
+    })
     },
     onShow: function () {
      
@@ -127,6 +137,44 @@ Page({
         })
         //网络请求
         that.fetchData();
+        if( that.data.showflag == false){
+          that.hiddencategory()
+        }
+     
+    },
+    getcategory:function(){
+        var that =this 
+     
+        that.data.showflag?that.showcategory():that.hiddencategory()
+      
+     
+  
+    },
+    showcategory:function(){
+        console.log('show');
+        this.iconAnimation.rotate(45).step()
+    this.opictyAnimation.opacity(0).step()
+    this.categroyAnimation.translateY(830).step()
+    this.setData({ 
+          iconAnimation: this.iconAnimation.export(),
+            opictyAnimation: this.opictyAnimation.export(),
+          categroyAnimation:this.categroyAnimation.export(),
+          showflag:false
+          })
+    },
+      hiddencategory:function(){
+           console.log('hidden');
+    this.iconAnimation.rotate(90).step()
+      this.opictyAnimation.opacity(1).step()
+    this.categroyAnimation.translateY(-830).step()
+    this.setData({ 
+          iconAnimation: this.iconAnimation.export(),
+           opictyAnimation: this.opictyAnimation.export(),
+          categroyAnimation:this.categroyAnimation.export(),
+           showflag:true
+          })
     }
+   
+
 })
 

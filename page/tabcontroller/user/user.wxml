@@ -5,3 +5,4 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 </view>
+

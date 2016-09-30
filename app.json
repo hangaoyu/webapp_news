@@ -19,13 +19,13 @@
     "backgroundColor": "#ffffff",
     "list": [ {
       "pagePath": "page/tabcontroller/news/news",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
+      "iconPath": "image/new.png",
+      "selectedIconPath": "image/new.png",
       "text": "新闻"
     }, {
       "pagePath":  "page/tabcontroller/user/user",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
+      "iconPath": "image/me.png",
+      "selectedIconPath": "image/me.png",
       "text": "用户"
     }
    
