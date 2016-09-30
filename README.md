@@ -1,8 +1,8 @@
 
 #网易新闻接口练手做的小程序
-![Aaron Swartz](https://github.com/hangaoyu/webapp_news/blob/master/n.png?raw=true) 
 
 
+![Aaron Swartz](https://github.com/hangaoyu/webapp_news/blob/master/news.gif?raw=true) 
 ##功能
 
 已经完成的功能：
